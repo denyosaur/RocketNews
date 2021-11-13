@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="/static/rocket.png">
+
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <title>Rocket News</title>
+</head>
+
+<body>
+    <div class="navbar-section">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/"><i class="bi bi-moon-stars-fill"></i> RocketNews</a>
+                  <div class="collapse navbar-collapse nav-options">
+                    <ul class="navbar-nav d-inline-flex justify-content-between">
+                        <div class="d-inline-flex justify-content-start">
+                            <li class="nav-item"><a class="nav-link" href="/coins">Explore Coins</a></li>
+                        </div>
+                        <div class="d-inline-flex justify-content-end">
+                        {% if g.user %}
+                            <li class="nav-item"><a class="nav-link" href="/user/{{g.user.id}}">Account</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                            {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        {% endif %}
+                        </div>
+                    </ul>
+                  </div>
+                
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="main-body">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+
+</html>

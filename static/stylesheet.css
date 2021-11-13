@@ -1,0 +1,206 @@
+/* 
+Color Key:
+forest: #04202C
+evergreen: #3040404
+pine: #5B7065
+fog: #C9D1C8
+ */
+
+/* Navigation bar CSS */
+.navbar {
+    background-color:#414a4e;
+}
+
+.nav-options {
+    width:100%;
+}
+
+.nav-options ul {
+    width:100%;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.nav-right {
+    float:right;
+}
+
+.nav-left {
+    float:left;
+}
+
+.nav-item a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Body CSS */
+
+body {
+    background-color: #04202C;
+    color: #C9D1C8;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.main-body {
+    display:inline-block;
+
+}
+
+.query-list {
+    list-style-type: none;
+    background-color: #063244;
+    max-width:400px;
+    margin-top:10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.text-right{
+    float: right;
+}
+
+.text-left{
+    float: left;
+}
+
+/* Canvas.js CSS */
+.history-chart {
+    margin-top: 20px;
+}
+
+/* Table CSS */
+
+table {
+    background: white;
+    color: #04202C;
+    border-radius: 7px;
+}
+
+.info-header {
+    display:inline;
+}
+
+/* news article CSS */
+.article-image img {
+    max-width:100px;
+    max-height:100px;
+    width:auto;
+    height:auto;
+    border-radius: 4px;
+    float:left;
+    margin-right:.3rem;
+}
+
+.article-info {
+    margin-top:2%;
+}
+
+.card-body {
+    color:#304044;
+}
+
+/* Homepage CSS */
+.homepage {
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.homepage-search {
+    display:flex;
+    flex-direction: row;
+    height:200px;
+    width:100%;
+}
+
+.homepage-search-header {
+    width:20%;
+}
+
+.homepage-query {
+    display:flex;
+    flex-direction: column;
+    width:80%;
+}
+
+.query-list-coins li{
+    position:absolute;
+}
+
+.search-input-coins {
+    width:50%;
+    min-width:300px;
+}
+
+.coins-query-searchbar {
+    width:100%;
+}
+
+.query-results {
+    background-color: #094158;
+}
+
+.homepage-coin {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    width:100%;
+}
+
+.homepage-card {
+    margin: 0 0 20px 0;
+    width: 400px;
+    height: 300px;
+    max-height: 250px;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+/* stock info page */
+.company-logo img {
+    max-width: 100px;
+    max-height: 100px;
+    width:auto;
+    height:auto;
+}
+
+li .comp-info {
+    text-align:right;
+}
+
+.comp-description {
+    font-size: 1rem;
+}
+
+.article-section {
+    margin-bottom:75px;
+}
+
+.coins-query {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Login page */
+.login-container {
+    display:flex;
+    flex-direction: column;
+    width:40%;
+}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<meta id="identifier" data-identifier="coins">
+<div class="coin-info">
+    <h1 class="info-header">
+        <span data-symbol="{{coin.symbol}}"> {% if coin.id in followed %}
+            <i class="like-button bi bi-moon-stars-fill"></i>
+            {% else %}
+            <i class="like-button bi bi-moon"></i>
+            {% endif %}</span>
+        {{coin.name}}
+    </h1>
+    <span class="symbol">{{coin.symbol}}</span>
+</div>
+<meta id="performance-history" data-history="{{coin_history}}">
+<div class="history-chart">
+    <div class="candleStickContainer" style="width: 100%; height: 300px"></div>
+</div>
+<div class="coin-main-info">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Price</th>
+                <th scope="col">Percent Change (24h)</th>
+                <th scope="col">Market Cap</th>
+                <th scope="col">Volume(24h)</th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            <tr class="asdfg">
+                <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.price|float)}}</td>
+                <td class="percent">{{ "{:,.2f}%".format(coin.quote.USD.percent_change_24h|float)}}</td>
+                <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.market_cap|float)}}</td>
+                <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.volume_24h|float)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+{% if news_articles %}
+<div class="container article-section">
+    {% for article in news_articles %}
+    <div class="card">
+        <div class="card-body">
+            <div class="article-image-title">
+                <div class="article-image">
+                    <a href="{{article.url}}">
+                        <img src="{{article.urlToImage}}" alt="article-image"
+                            onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkWfbGNKZyGwrxymaoronVG972LJ0Nd3OspQ&usqp=CAU';">
+                    </a>
+                </div>
+                <div class="article-title text-decoration-none">
+                    <a href="{{article.url}}">
+                        <h4>{{article.title}}</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="article-info">
+                <div class="article-source text-decoration-none">
+                    <a href="https://www.{{article.source.name}}.com">{{article.source.name}}</a>
+                </div>
+                <div class="article-description">
+                    <span>{{article.description}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<script src="/static/rocket-news.js"></script>
+<script src="/static/charts-html.js"></script>
+{% endblock %}

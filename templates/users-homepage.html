@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="homepage">
+    <div class="homepage-search">
+        <div class="homepage-search-header">
+            <h4>Search Coins</h4>
+        </div>
+            
+        <div class="homepage-query">
+            <div class="coins-query-searchbar">
+                <form action="">
+                    <input type="text" class="search-input-coins" placeholder="Enter coin symbol.."
+                        data-coins="coins-query">
+                </form>
+            </div>
+            <div class="homepage-search-results">
+                <ul class="query-list-coins">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="homepage-coin">
+        {% if followed_coins is not none %}
+        {% for key, value in followed_coins.items() %}
+        <div class="card homepage-card h-100 ">
+            <div class="card-header" id="coins" data-symbol="{{value.symbol}}" data-type="coins">
+                <i class="like-button bi bi-moon-stars-fill"></i>
+                <a href="/coins/{{ key }}">{{value.name}} - {{value.symbol}}</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div>
+                            <span>Price: </span>
+                            <span class="text-right">{{
+                                "${:,.2f}".format(value.quote.USD.price|float)}}</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <span>Percent Change(24h): </span>
+                            <span class="text-right">{{
+                                "{:,.2f}%".format(value.quote.USD.percent_change_24h|float)}}</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <span>Market Cap: </span>
+                            <span class="text-right">{{
+                                "${:,.2f}".format(value.quote.USD.market_cap|float)}}</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <span>Volume(24h): </span>
+                            <span class="text-right">{{
+                                "${:,.2f}".format(value.quote.USD.volume_24h|float)}}</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<script src="/static/users-homepage.js"></script>
+{% endblock %}

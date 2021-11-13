@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>List of all Coins</h1>
+<meta id="identifier" data-identifier="coins">
+
+<div>
+    <div class="table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Follow</th>
+                    <th scope="col">Coin Symbol</th>
+                    <th scope="col">Coin Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Percent Change (24h)</th>
+                    <th scope="col">Market cap</th>
+                    <th scope="col">Volume (24h)</th>
+                </tr>
+            </thead>
+            <tbody class="table-hover table-body">
+                {% for coin in coins %}
+                <tr class="coins-row">
+                    <td data-symbol="{{coin.symbol}}">
+                        {% if coin.id in followed %}
+                        <i class="like-button bi bi-moon-stars-fill"></i>
+                        {% else %}
+                        <i class="like-button bi bi-moon"></i>
+                        {% endif %}
+                    </td>
+                    <th scope="row"><a href="/coins/{{coin.symbol}}">{{coin.symbol}}</a></th>
+                    <td><a href="/coins/{{coin.symbol}}">{{coin.name}}</a></td>
+                    <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.price|float)}}</td>
+                    <td class="percent">{{ "{:,.2f}%".format(coin.quote.USD.percent_change_24h|float)}}</td>
+                    <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.market_cap|float)}}</td>
+                    <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.volume_24h|float)}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<script src="/static/rocket-news.js"></script>
+<script src="/static/coin-list.js"></script>
+{% endblock %}
