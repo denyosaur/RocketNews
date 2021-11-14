@@ -122,8 +122,10 @@ table {
 .homepage-search {
     display:flex;
     flex-direction: row;
-    height:200px;
+    align-items: baseline;
+    height:100px;
     width:100%;
+    margin-top: 10px;
 }
 
 .homepage-search-header {
@@ -136,10 +138,6 @@ table {
     width:80%;
 }
 
-.query-list-coins li{
-    position:absolute;
-}
-
 .search-input-coins {
     width:50%;
     min-width:300px;
@@ -149,8 +147,18 @@ table {
     width:100%;
 }
 
+.query-list-coins li{
+    position:absolute;
+
+}
+
 .query-results {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: #094158;
+    width:30%;
+    min-width:200px;
 }
 
 .homepage-coin {

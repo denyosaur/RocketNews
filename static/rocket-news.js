@@ -1,66 +1,63 @@
-let identifier = $("#identifier").data("identifier");
-let symbol = $(".symbol").text()
-let paginationCount = 1;
+//functions helpers to handle infinite scrolling for news articles
 
+let symbol = $(".symbol").text(); //variable to hold the coin's symbol of the current page
+let paginationCount = 1; //variable for pagination, used for sending requests to external news API
+let ajaxLock = false; //variable to instantiate boolean used to pull information while true
+
+/** On Click for like button
+ * handles click on like button (shape of moon). this adds the symbol of the coin to 
+ * user's favorites
+*/
 $(document).on("click", ".like-button", (evt) => {
     $(evt.target).toggleClass("bi-moon-stars-fill bi-moon");
 
-    let symbol = $(evt.target).parent().data("symbol")
+    let symbol = $(evt.target).parent().data("symbol");
 
-    if (identifier == "stocks") {
-        addStockToFavorite(symbol);
-    } else if (identifier == "coins") {
-        addCoinToFavorite(symbol);
-    }
-})
+    addCoinToFavorite(symbol);
+});
 
-//functions for adding coin or stocks to favorite table
-async function addStockToFavorite(symbol) {
-    const res = await axios.post(`/add/stock/${symbol}`);
-    return res;
-}
+/** functions for adding coin to favorite table
+ * sends a POST request to backend api for adding or removing coin
+*/
 async function addCoinToFavorite(symbol) {
     const res = await axios.post(`/add/coin/${symbol}`);
     return res;
-}
+};
 
-// Jquery for handling the population of candlestick graphs
-
-let ajaxLock = false;
-
-//below methods handle the infinite scrolling.
+/** functions to handle infinite scrolling for news
+ * On scroll down, if ajaxLock is false, increase paginagtion count
+ * then get additional articles using coin symbol and pagination
+*/
 $(window).scroll((evt) => {
     evt.preventDefault()
     if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
-        if (ajaxLock == true) {
+        if (ajaxLock === true) {
+            ajaxLock = false;
             return
         } else {
-            ajaxLock = true;
-            paginationCount += 1;
-            if (identifier == "stocks") {
-                getStockArticles(symbol, paginationCount);
-            } else {
-                getCoinArticles(symbol, paginationCount)
-            }
+            ajaxLock = true; //set ajaxCoinsLock to true
+            paginationCount += 1; //increase pagination count for external GET request
+
+            getCoinArticles(symbol, paginationCount); //function to call more articles
         }
     }
 });
 
-//get news articles through axios 
+/** functions to get articles
+ * function to call internal API (which then calls external API) gets news articles using symbol and pagination
+ * then call addArticlesToHtml
+*/
 async function getCoinArticles(symbol, count) {
     const res = await axios.get(`/api/coin-news/${symbol}/${count}`);
     addArticlesToHtml(res);
     ajaxLock = false;
-}
+};
 
-async function getStockArticles(symbol, count) {
-    const res = await axios.get(`/api/stock-news/${symbol}/${count}`);
-    addArticlesToHtml(res);
-    ajaxLock = false;
-}
-
+/** functions to add new articles to HTML
+ * for each new article, add news information to HTML 
+*/
 function addArticlesToHtml(res) {
-    article_info = res.data.articles
+    article_info = res.data.articles; //instantiate articles to article_info
     for (let article of article_info) {
         $(".article-section").append(`
         <div class="card">
@@ -91,6 +88,6 @@ function addArticlesToHtml(res) {
             </div>
         </div>
     </div>
-    `)
-    }
-}
+    `);
+    };
+};
