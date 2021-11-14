@@ -1,4 +1,4 @@
-Rocket News: https://rocket-news-dk1.herokuapp.com/
+Rocket News: https://rocketnews.herokuapp.com/
 
 Rocket News is used to track stocks and crypto currencies. A user can view specific stocks/coins to get a high level overview of performance and the most up to date news articles.
 

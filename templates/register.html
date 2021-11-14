@@ -1,24 +1,26 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="container">
-    <h1>Register</h1>
-    <p>
-        {% for message in messages %}
-        {{message}}
-        {% endfor %}
-    </p>
-    <form action="/register" method="POST">
-        {{form.hidden_tag()}}
-        {% for input in form if input.widget.input_type != 'hidden' %}
-        <p>
-            {{input.label}}
-            {{input}}
-            {% for error in input.errors %}
-            {{error}}
+<div class="Register">
+    <div class="Registerform-container">
+        <h1>Register</h1>
+        <div>
+            {% for message in messages %}
+            {{message}}
             {% endfor %}
-        </p>
-        {% endfor %}
-        <button class="btn btn-primary">Sign Up</button>
-    </form>
+        </div>
+        <form action="/register" method="POST">
+            {{form.hidden_tag()}}
+            {% for input in form if input.widget.input_type != 'hidden' %}
+                <div class="form-group">
+                    {{input.label}}
+                    {{ input(placeholder=input.label.text, class="form-control") }}
+                    {% for error in input.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <button class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

@@ -52,11 +52,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.main-body {
-    display:inline-block;
-
-}
-
 .query-list {
     list-style-type: none;
     background-color: #063244;
@@ -207,6 +202,23 @@ li .comp-info {
 }
 
 /* Login page */
+.Login {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+
+.loginform-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginform-container form{
+    min-width: 480px;
+}
+
 .login-container {
     display:flex;
     flex-direction: column;
