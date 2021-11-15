@@ -16,7 +16,7 @@
                 </div>
             {% endfor %}
 
-            <p>To confirm changes, enter your password:</p>
+            <label>To confirm changes, enter your password:</label>
             {% if form.password.errors %}
             {% for error in form.password.errors %}
             <span class="text-danger">
@@ -27,8 +27,7 @@
             {{ form.password(placeholder="Enter your password to confirm", class="form-control") }}
 
             <div class="edit-btn-area">
-                <button class="btn btn-success form-button">Edit this user!</button>
-                <a href="/users/{{ user_id }}" class="btn btn-outline-secondary">Cancel</a>
+                <button class="btn btn-success form-button">Edit my info!</button>
             </div>
         </form>
     </div>
