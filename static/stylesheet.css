@@ -213,14 +213,28 @@ li .comp-info {
     display:flex;
     flex-direction: column;
     align-items: center;
+    width:40%;
 }
 
 .loginform-container form{
     min-width: 480px;
 }
 
-.login-container {
+/* Register page */
+.Register {
     display:flex;
     flex-direction: column;
+    align-items: center;
+    width:100%;  
+}
+
+.Registerform-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     width:40%;
+}
+
+.Registerform-container form{
+    min-width: 480px;
 }
