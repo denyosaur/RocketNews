@@ -2,18 +2,18 @@
 {% block body %}
 <div class="EditUser">
     <h1>Edit Account Information</h1>
-    <div div class="Userform-container">
+    <div class="Userform-container">
         <form method="POST" id="user_form">
             {{ form.hidden_tag() }}
 
             {% for field in form if field.widget.input_type != 'hidden' and field.name != 'password' %}
-            <div class="form-group">
-                {{input.label}}
-                {% for error in field.errors %}
-                <span class="text-danger">{{ error }}</span>
-                {% endfor %}
-            {{ field(placeholder=field.label.text, class="form-control") }}
-            </div>
+                <div class="form-group">
+                    {{input.label}}
+                    {{ field(placeholder=field.label.text, class="form-control") }}
+                    {% for error in field.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
             {% endfor %}
 
             <p>To confirm changes, enter your password:</p>
