@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="container">
-    <h1>Account Information Edit</h1>
-    <div>
+<div class="EditUser">
+    <h1>Edit Account Information</h1>
+    <div div class="Userform-container">
         <form method="POST" id="user_form">
             {{ form.hidden_tag() }}
 
             {% for field in form if field.widget.input_type != 'hidden' and field.name != 'password' %}
-            {% for error in field.errors %}
-            <span class="text-danger">{{ error }}</span>
-            {% endfor %}
+            <div class="form-group">
+                {{input.label}}
+                {% for error in field.errors %}
+                <span class="text-danger">{{ error }}</span>
+                {% endfor %}
             {{ field(placeholder=field.label.text, class="form-control") }}
+            </div>
             {% endfor %}
 
             <p>To confirm changes, enter your password:</p>
@@ -24,7 +27,7 @@
             {{ form.password(placeholder="Enter your password to confirm", class="form-control") }}
 
             <div class="edit-btn-area">
-                <button class="btn btn-success">Edit this user!</button>
+                <button class="btn btn-success form-button">Edit this user!</button>
                 <a href="/users/{{ user_id }}" class="btn btn-outline-secondary">Cancel</a>
             </div>
         </form>

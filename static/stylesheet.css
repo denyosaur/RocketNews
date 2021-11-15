@@ -238,3 +238,27 @@ li .comp-info {
 .Registerform-container form{
     min-width: 480px;
 }
+
+.form-button {
+    width:100%;
+    margin-top:12px;
+}
+
+/* User Form page */
+.EditUser {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;  
+}
+
+.Userform-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:40%;
+}
+
+.Userform-container form{
+    min-width: 480px;
+}
