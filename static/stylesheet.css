@@ -198,7 +198,7 @@ table {
     display:flex;
     flex-direction: column;
     align-items: center;
-    width:40%;
+    width:100%;
 }
 
 /* Register page */
@@ -213,7 +213,7 @@ table {
     display:flex;
     flex-direction: column;
     align-items: center;
-    width:40%;
+    width:100%;
 }
 
 .form-button {
