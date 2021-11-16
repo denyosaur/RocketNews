@@ -201,10 +201,6 @@ table {
     width:40%;
 }
 
-.loginform-container form{
-    max-width: 800px;
-}
-
 /* Register page */
 .Register {
     display:flex;
@@ -218,10 +214,6 @@ table {
     flex-direction: column;
     align-items: center;
     width:40%;
-}
-
-.Registerform-container form{
-    max-width: 800px;
 }
 
 .form-button {
@@ -241,11 +233,7 @@ table {
     display:flex;
     flex-direction: column;
     align-items: center;
-    width:40%;
-}
-
-.Userform-container form{
-    min-width: 480px;
+    width:100%;
 }
 
 /* Footer */
@@ -255,8 +243,9 @@ table {
     bottom:0px;
     background-color:#414a4e;
     color:white;
-    height:50px;
+    height:70px;
     width:100%;
+    font-size:.75rem;
 }
 
 .footer-items a{

@@ -7,12 +7,14 @@
             {{ form.hidden_tag() }}
 
             {% for field in form if field.widget.input_type != 'hidden' and field.name != 'password' %}
-                <div class="form-group">
+            <div class="row">
+                <div class="form-group col-12 col-md-5">
                     {{field.label}}
                     {{ field(placeholder=field.label.text, class="form-control") }}
                     {% for error in field.errors %}
                         <span class="text-danger">{{ error }}</span>
                     {% endfor %}
+                </div>
                 </div>
             {% endfor %}
 

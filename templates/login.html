@@ -7,12 +7,14 @@
         <form action="/login" method="POST">
                 {{ form.hidden_tag() }}
                 {% for field in form if field.widget.input_type != 'hidden' %}
-                <div class="form-group">
-                    {{field.label}}
-                    {{ field(placeholder=field.label.text, class="form-control") }}
-                    {% for error in field.errors %}
-                    <span class="text-danger">{{ error }}</span>
-                {% endfor %}
+                <div class="row">
+                    <div class="form-group col-12 col-md-5">
+                        {{field.label}}
+                        {{ field(placeholder=field.label.text, class="form-control") }}
+                        {% for error in field.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                    </div>
                 </div>
                 {% endfor %}
                 <button class="btn btn-primary form-button">Login</button>
