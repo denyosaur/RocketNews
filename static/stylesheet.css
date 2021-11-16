@@ -264,3 +264,17 @@ li .comp-info {
 }
 
 /* Footer */
+.footer {
+    background-color:#414a4e;
+    color:white;
+    height:100px;
+}
+
+.footer-items a{
+    text-decoration: none;
+    color:rgb(189, 189, 189);
+}
+
+.footer-items a:hover{
+    color:white;
+}
