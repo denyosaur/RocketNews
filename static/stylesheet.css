@@ -264,7 +264,10 @@ li .comp-info {
 }
 
 /* Footer */
-.footer {
+
+.footer-section {
+    position:absolute;
+    bottom:0px;
     background-color:#414a4e;
     color:white;
     height:100px;
