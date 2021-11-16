@@ -175,22 +175,7 @@ table {
     font-weight: bold;
 }
 
-/* stock info page */
-.company-logo img {
-    max-width: 100px;
-    max-height: 100px;
-    width:auto;
-    height:auto;
-}
-
-li .comp-info {
-    text-align:right;
-}
-
-.comp-description {
-    font-size: 1rem;
-}
-
+/* News page */
 .article-section {
     margin-bottom:75px;
 }
@@ -217,7 +202,7 @@ li .comp-info {
 }
 
 .loginform-container form{
-    min-width: 480px;
+    max-width: 800px;
 }
 
 /* Register page */
@@ -236,7 +221,7 @@ li .comp-info {
 }
 
 .Registerform-container form{
-    min-width: 480px;
+    max-width: 800px;
 }
 
 .form-button {
@@ -270,7 +255,7 @@ li .comp-info {
     bottom:0px;
     background-color:#414a4e;
     color:white;
-    height:100px;
+    height:50px;
     width:100%;
 }
 
@@ -281,4 +266,8 @@ li .comp-info {
 
 .footer-items a:hover{
     color:white;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
