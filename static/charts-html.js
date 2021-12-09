@@ -33,7 +33,8 @@ function sortDateKeys(obj) {
 
     for (let date of dateKeys) {
         dateArray.push(parseInt(date.replaceAll("-", "")))
-    }
+    };
+    
     return dateArray.sort((a, b) => b - a).slice(0, 59);
 }
 

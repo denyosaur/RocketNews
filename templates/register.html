@@ -11,15 +11,13 @@
         <form action="/register" method="POST">
             {{form.hidden_tag()}}
             {% for input in form if input.widget.input_type != 'hidden' %}
-            <div class="row">
-                <div class="form-group col-12 col-md-5">
+            <div class="register-input">
                     {{input.label}}
                     {{ input(placeholder=input.label.text, class="form-control") }}
                     {% for error in input.errors %}
                     <span class="text-danger">{{ error }}</span>
                     {% endfor %}
-                </div>
-                </div>
+            </div>
             {% endfor %}
             <button class="btn btn-primary form-button">Sign Up</button>
         </form>
