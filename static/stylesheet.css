@@ -7,8 +7,19 @@ fog: #C9D1C8
  */
 
 /* Navigation bar CSS */
-.navbar {
+header {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 5;
+    overflow: hidden;
     background-color:#414a4e;
+    margin-bottom:5vh
+}
+
+.navbar {
+    position:sticky;
+    top: 0;
 }
 
 .nav-options {
@@ -42,6 +53,10 @@ fog: #C9D1C8
 body {
     background-color: #04202C;
     color: #C9D1C8;
+}
+
+.body-block {
+    margin-top:50px;
 }
 
 a {
@@ -295,15 +310,12 @@ table {
 /* Footer */
 .footer-section {
     display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items: center;
-    position:fixed;
-    bottom:0px;
+    position:relative;
+    bottom:0%;
     background-color:#414a4e;
     color:white;
     height:15vh;
-    width:100%;
+    width:100vw;
     font-size:.75em;
 }
 
@@ -349,8 +361,6 @@ table {
     }
 
     .footer-container {
-        display:flex;
-        flex-direction:row;
         justify-content:space-evenly;
         align-items: center;
     }
@@ -364,8 +374,6 @@ table {
     }
 
     .footer-container {
-        display:flex;
-        flex-direction:row;
         justify-content:space-between;
         align-items: center;
     }

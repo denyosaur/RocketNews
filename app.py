@@ -10,8 +10,8 @@ import os
 from flask_debugtoolbar import DebugToolbarExtension
 #########################################################################################################
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news')).replace("://", "ql://", 1)
-##app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news'))
+##app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news')).replace("://", "ql://", 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news'))
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
