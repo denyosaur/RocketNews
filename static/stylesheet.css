@@ -22,24 +22,14 @@ header {
     top: 0;
 }
 
-.nav-options {
-    width:100%;
-}
-
-.nav-options ul {
-    width:100%;
+.navbar-nav {
+    display:flex;
+    flex-direction:row;
+    justify-content:end;
 }
 
 .navbar-brand {
     color: white;
-}
-
-.nav-right {
-    float:right;
-}
-
-.nav-left {
-    float:left;
 }
 
 .nav-item a {
@@ -57,6 +47,7 @@ body {
 
 .body-block {
     margin-top:100px;
+    margin-bottom:15vh;
 }
 
 a {
@@ -306,8 +297,8 @@ table {
 /* Footer */
 .footer-section {
     display:flex;
-    position:relative;
-    bottom:0%;
+    position:fixed;
+    bottom:0;
     background-color:#414a4e;
     color:white;
     height:15vh;
@@ -337,6 +328,11 @@ table {
 }
 
 @media only screen and (min-width: 600px) { /* Small devices */
+    .body-block {
+        margin-top:7vh;
+        margin-bottom:7vh;
+    }
+
     .footer-section {
         height:7vh;
         font-size:.8em;
@@ -351,27 +347,15 @@ table {
 }
 
 @media only screen and (min-width: 768px) { /* Medium devices */
-    .footer-section {
-        height:7vh;
-        font-size:1em;
-    }
-
     .footer-container {
         justify-content:space-evenly;
-        align-items: center;
     }
 }
 
 
 @media only screen and (min-width: 992px) { /* Large devices */
-    .footer-section {
-        height:7vh;
-        font-size:1em;
-    }
-
     .footer-container {
         justify-content:space-between;
-        align-items: center;
     }
 }
 
