@@ -1,44 +1,52 @@
 {% extends 'base.html' %}
 {% block body %}
 <meta id="identifier" data-identifier="coins">
-
-<div>
-    <div class="table">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Follow</th>
-                    <th scope="col">Coin Symbol</th>
-                    <th scope="col">Coin Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Percent Change (24h)</th>
-                    <th scope="col">Market cap</th>
-                    <th scope="col">Volume (24h)</th>
+    <div class="CoinsTable">
+        <table >
+            <thead class="CoinsTable-thead">
+                <tr class="CoinsTable-header">
+                    <th id="CoinsTable-header2">Coin Name</th>
+                    <th id="CoinsTable-header3">Price</th>
+                    <th id="CoinsTable-header4">Percent Change (24h)</th>
+                    <th id="CoinsTable-header5">Market cap</th>
+                    <th id="CoinsTable-header6">Volume (24h)</th>
                 </tr>
             </thead>
-            <tbody class="table-hover table-body">
+            <tbody class="CoinsTable-tbody">
                 {% for coin in coins %}
-                <tr class="coins-row">
-                    <td data-symbol="{{coin.symbol}}">
-                        {% if coin.id in followed %}
-                        <i class="like-button bi bi-moon-stars-fill"></i>
-                        {% else %}
-                        <i class="like-button bi bi-moon"></i>
-                        {% endif %}
+                <tr class="CoinsTable-row">
+                    <th headers="CoinsTable-header2" class="CoinsTable-Row-Header CoinsTable-StickyCol">
+                        <div class="CoinsTable-like-button">
+                            {% if coin.id in followed %}
+                            <i class="like-button bi bi-moon-stars-fill"></i>
+                            {% else %}
+                            <i class="like-button bi bi-moon"></i>
+                            {% endif %}
+                        </div>
+                        <a href="/coins/{{coin.symbol}}">
+                            <div class="CoinsTable-name">
+                                <div class="CoinsTable-name-name">{{coin.name}}</div> 
+                                <div class="CoinsTable-name-symbol">{{coin.symbol}}</div>
+                            </div>
+                        </a>
+                    </th>
+                    <td headers="CoinsTable-header3">
+                        <div class="CoinsTable-text">{{ "${:,.2f}".format(coin.quote.USD.price|float)}}</div>
                     </td>
-                    <th scope="row"><a href="/coins/{{coin.symbol}}">{{coin.symbol}}</a></th>
-                    <td><a href="/coins/{{coin.symbol}}">{{coin.name}}</a></td>
-                    <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.price|float)}}</td>
-                    <td class="percent">{{ "{:,.2f}%".format(coin.quote.USD.percent_change_24h|float)}}</td>
-                    <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.market_cap|float)}}</td>
-                    <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.volume_24h|float)}}</td>
+                    <td headers="CoinsTable-header4">
+                        <div class="CoinsTable-text">{{ "{:,.2f}%".format(coin.quote.USD.percent_change_24h|float)}}</div>
+                    </td>
+                    <td headers="CoinsTable-header5">
+                        <div class="CoinsTable-text">{{ "${:,.2f}".format(coin.quote.USD.market_cap|float)}}</div>
+                    </td>
+                    <td headers="CoinsTable-header6">
+                        <div class="CoinsTable-text">{{ "${:,.2f}".format(coin.quote.USD.volume_24h|float)}}</div>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-
-</div>
 <script src="/static/rocket-news.js"></script>
 <script src="/static/coin-list.js"></script>
 {% endblock %}

@@ -7,10 +7,10 @@ fog: #C9D1C8
  */
 
 /* Navigation bar CSS */
-header {
+.navbar-section {
     position: fixed;
     top: 0%;
-    width: 100%;
+    width: 100vw;
     z-index: 5;
     overflow: hidden;
     background-color:#414a4e;
@@ -46,8 +46,8 @@ body {
 }
 
 .body-block {
-    margin-top:7vh;
-    margin-bottom:15vh;
+    margin-top:8vh;
+    margin-bottom:7vh;
 }
 
 a {
@@ -84,10 +84,61 @@ ul {
 
 /* Table CSS */
 
-table {
+.CoinsTable{
     background: white;
     color: #04202C;
     border-radius: 7px;
+    width:100%;
+    overflow:scroll;
+}
+
+.CoinsTable-thead {
+    display:table-header-group;
+}
+
+#CoinsTable-header2 {
+    position:sticky;
+    width:10em;
+    left:0;
+    background-color:white;
+    z-index: 2;
+}
+
+#CoinsTable-header4 {
+    width:10em;
+}
+
+.CoinsTable-row th{
+    position:sticky;
+    left:0;
+    background-color:white;
+    z-index: 2;
+}
+
+.CoinsTable-row td {
+    width:10em;
+}
+
+.CoinsTable-Row-Header {
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.CoinsTable-name {
+    display:flex;
+    flex-direction:column;
+    margin-left:2rem;
+}
+
+.CoinsTable-name-name {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.CoinsTable-name-symbol {
+    font-size: .7rem;
 }
 
 .info-header {
@@ -295,7 +346,6 @@ table {
 /* Footer */
 .footer-section {
     display:flex;
-    position:fixed;
     bottom:0;
     background-color:#414a4e;
     color:white;
