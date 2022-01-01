@@ -30,7 +30,7 @@ async function addCoinToFavorite(symbol) {
 */
 $(window).scroll((evt) => {
     evt.preventDefault()
-    if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+    if ($(window).scrollTop() >= $(document).height() - $(window).height() - 40) {
         if (ajaxLock === true) {
             ajaxLock = false;
             return

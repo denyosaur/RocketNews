@@ -3,19 +3,26 @@
 <meta id="identifier" data-identifier="coins">
     <div class="CoinsTable">
         <table >
+            <colgroup>
+                <col span="1">
+                <col span="1">
+                <col span="1">
+                <col span="1">
+                <col span="1">
+            </colgroup>
             <thead class="CoinsTable-thead">
                 <tr class="CoinsTable-header">
-                    <th id="CoinsTable-header2">Coin Name</th>
-                    <th id="CoinsTable-header3">Price</th>
-                    <th id="CoinsTable-header4">Percent Change (24h)</th>
-                    <th id="CoinsTable-header5">Market cap</th>
-                    <th id="CoinsTable-header6">Volume (24h)</th>
+                    <th id="CoinsTable-header2" scope="col" style="width: 20%">Coin Name</th>
+                    <th id="CoinsTable-header3" scope="col" style="width: 20%">Price</th>
+                    <th id="CoinsTable-header4" scope="col" style="width: 20%">Percent Change (24h)</th>
+                    <th id="CoinsTable-header5" scope="col" style="width: 20%">Market cap</th>
+                    <th id="CoinsTable-header6" scope="col" style="width: 20%">Volume (24h)</th>
                 </tr>
             </thead>
             <tbody class="CoinsTable-tbody">
                 {% for coin in coins %}
                 <tr class="CoinsTable-row">
-                    <th headers="CoinsTable-header2" class="CoinsTable-Row-Header CoinsTable-StickyCol">
+                    <th headers="CoinsTable-header2" class="CoinsTable-Row-Header" scope="row">
                         <div class="CoinsTable-like-button">
                             {% if coin.id in followed %}
                             <i class="like-button bi bi-moon-stars-fill"></i>
@@ -30,7 +37,7 @@
                             </div>
                         </a>
                     </th>
-                    <td headers="CoinsTable-header3">
+                    <td headers="CoinsTable-header3" class="CoinsTable-Row-price">
                         <div class="CoinsTable-text">{{ "${:,.2f}".format(coin.quote.USD.price|float)}}</div>
                     </td>
                     <td headers="CoinsTable-header4">

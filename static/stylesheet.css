@@ -6,7 +6,14 @@ pine: #5B7065
 fog: #C9D1C8
  */
 
+ .body-container {
+     display:flex;
+     flex-direction:column;
+     height:100vh;
+ }
+
 /* Navigation bar CSS */
+
 .navbar-section {
     position: fixed;
     top: 0%;
@@ -45,7 +52,7 @@ body {
     color: #C9D1C8;
 }
 
-.body-block {
+.body-section {
     margin-top:8vh;
     margin-bottom:7vh;
 }
@@ -83,53 +90,69 @@ ul {
 }
 
 /* Table CSS */
-
 .CoinsTable{
+    table-layout: fixed;
+
     background: white;
     color: #04202C;
     border-radius: 7px;
-    width:100%;
     overflow:scroll;
+    width:auto;
+    max-width:100vw;
+    height:100%;
+    max-height:76vh;
 }
 
 .CoinsTable-thead {
     display:table-header-group;
 }
 
+
 #CoinsTable-header2 {
     position:sticky;
-    width:10em;
+    width:20em;
     left:0;
     background-color:white;
     z-index: 2;
 }
 
-#CoinsTable-header4 {
-    width:10em;
+.CoinsTable-row {
+    border-style:solid;
+    border-color: #acc1c9;
+    border-width:1px;
 }
 
-.CoinsTable-row th{
-    position:sticky;
-    left:0;
-    background-color:white;
-    z-index: 2;
+td {
+    padding:0 20px 0 20px;
 }
 
-.CoinsTable-row td {
-    width:10em;
+.CoinsTable-row:hover {
+    border-color: #3b9dc4;
 }
 
 .CoinsTable-Row-Header {
+    position:sticky;
+    left:0;
+    width:10em;
+    background-color:white;
+    z-index: 2;
     display:flex;
     flex-direction: row;
     justify-content: left;
     align-items: center;
 }
 
-.CoinsTable-name {
+.CoinsTable-like-button {
+    margin:.5rem 1.2rem .5rem .8rem;
+}
+
+.CoinsTable-Row-Header a{
     display:flex;
     flex-direction:column;
-    margin-left:2rem;
+}
+
+.CoinsTable-Row-price {
+    width:150em;
 }
 
 .CoinsTable-name-name {
@@ -141,8 +164,24 @@ ul {
     font-size: .7rem;
 }
 
-.info-header {
-    display:inline;
+@media only screen and (min-width: 600px) { /* Small devices */
+    .CoinsTable {
+        max-height:85vh;
+    }
+}
+
+@media only screen and (min-width: 768px) { /* Medium devices */
+
+}
+
+
+@media only screen and (min-width: 992px) { /* Large devices */
+    
+}
+
+
+@media only screen and (min-width: 1200px) { /* Extra large devices */
+
 }
 
 /* news article CSS */
@@ -346,12 +385,14 @@ ul {
 /* Footer */
 .footer-section {
     display:flex;
+    position:fixed;
     bottom:0;
     background-color:#414a4e;
     color:white;
     height:15vh;
     width:100vw;
     font-size:.75em;
+    z-index:3;
 }
 
 .footer-container {
@@ -376,7 +417,8 @@ ul {
 }
 
 @media only screen and (min-width: 600px) { /* Small devices */
-    .body-block {
+    .body-section {
+        min-height:100%;
         margin-top:7vh;
         margin-bottom:7vh;
     }

@@ -21,61 +21,65 @@
 </head>
 
 <body>
-    <header class="navbar-section">
-        <nav class="navbar navbar-expand-md">
-            <div class="container">
-                <a class="navbar-brand" href="/"><i class="bi bi-moon-stars-fill"></i> RocketNews</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                <div class="collapse navbar-collapse nav-options" id="collapsibleNavbar">
-                    <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="/coins">Explore Coins</a></li>
-                        {% if g.user %}
-                            <li class="nav-item"><a class="nav-link" href="/user/{{g.user.id}}">Account</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
-                                {% else %}
-                            <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-                        {% endif %}
-                        </div>
-                    </ul>
+    <div class="body-container">
+        <header class="navbar-section">
+            <nav class="navbar navbar-expand-md">
+                <div class="container">
+                    <a class="navbar-brand" href="/"><i class="bi bi-moon-stars-fill"></i> RocketNews</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    <div class="collapse navbar-collapse nav-options" id="collapsibleNavbar">
+                        <ul class="navbar-nav ms-auto">
+                                <li class="nav-item"><a class="nav-link" href="/coins">Explore Coins</a></li>
+                            {% if g.user %}
+                                <li class="nav-item"><a class="nav-link" href="/user/{{g.user.id}}">Account</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                                    {% else %}
+                                <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                            {% endif %}
+                            </div>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container body-block">
-        {% block body %}
-        {% endblock %}
-    </div>
-
-    <footer class="footer-section">
-        <div class="footer-container container">
-            <div class="footer-info">
-                <span class="footer-brand-name"> Made by Daniel K.</span>
-            </div>
-            <div class="footer-links">
-                <div class="footer-items">
-                    <a href="https://www.linkedin.com/in/danielkim1989/"><i class="bi bi-linkedin"></i></a>
-                </div>
-                <div class="footer-items">
-                    <a href="https://github.com/denyosaur"><i class="bi bi-github"></i></a>
-                </div>
-                <div class="footer-items">
-                    <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>
-                </div>
-                <div class="footer-items">
-                    <a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a>
-                </div>
-                <div class="footer-items">
-                    <a href="https://www.twitter.com"><i class="bi bi-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-legal">
-                <span> Copyright © RocketNews Ltd 2021</span>
-            </div>
+            </nav>
+        </header>
+        
+        <div class="container body-section">
+            {% block body %}
+            {% endblock %}
         </div>
-    </footer>
+    
+        <footer class="footer-section">
+            <div class="footer-container container">
+                <div class="footer-info">
+                    <span class="footer-brand-name"> Made by Daniel K.</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-items">
+                        <a href="https://www.linkedin.com/in/danielkim1989/"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="footer-items">
+                        <a href="https://github.com/denyosaur"><i class="bi bi-github"></i></a>
+                    </div>
+                    <div class="footer-items">
+                        <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>
+                    </div>
+                    <div class="footer-items">
+                        <a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <div class="footer-items">
+                        <a href="https://www.twitter.com"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-legal">
+                    <span> Copyright © RocketNews Ltd 2021</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
 
 
 </body>
