@@ -6,10 +6,9 @@ pine: #5B7065
 fog: #C9D1C8
  */
 
- .body-container {
+ .header-container {
      display:flex;
      flex-direction:column;
-     height:100vh;
  }
 
 /* Navigation bar CSS */
@@ -54,7 +53,8 @@ body {
 
 .body-section {
     margin-top:8vh;
-    margin-bottom:7vh;
+    margin-bottom:14vh;
+    height:100%;
 }
 
 a {
@@ -418,13 +418,11 @@ td {
 
 @media only screen and (min-width: 600px) { /* Small devices */
     .body-section {
-        min-height:100%;
-        margin-top:7vh;
-        margin-bottom:7vh;
+        margin-bottom:14vh;
     }
 
     .footer-section {
-        height:7vh;
+        height:14vh;
         font-size:.8em;
     }
 
