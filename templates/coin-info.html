@@ -17,25 +17,20 @@
 <div class="history-chart">
     <div class="candleStickContainer" style="width: 100%; height: 300px"></div>
 </div>
-<div class="coin-main-info">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Price</th>
-                <th scope="col">Percent Change (24h)</th>
-                <th scope="col">Market Cap</th>
-                <th scope="col">Volume(24h)</th>
-            </tr>
-        </thead>
-        <tbody class="table-hover">
-            <tr class="asdfg">
-                <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.price|float)}}</td>
-                <td class="percent">{{ "{:,.2f}%".format(coin.quote.USD.percent_change_24h|float)}}</td>
-                <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.market_cap|float)}}</td>
-                <td class="dollars">{{ "${:,.2f}".format(coin.quote.USD.volume_24h|float)}}</td>
-            </tr>
-        </tbody>
-    </table>
+<hr>
+<div class="CoinsInfo">
+    <div class="CoinsInfo-header">
+        <div class="CoinsInfo-price">Price</div>
+        <div class="CoinsInfo-percha">Percent Change (24h)</div>
+        <div class="CoinsInfo-marcap">Market Cap</div>
+        <div class="CoinsInfo-volume">Volume(24h)</div>
+    </div>
+    <div class="CoinsInfo-body">
+        <div class="CoinsInfo-price dollar">{{ "${:,.2f}".format(coin.quote.USD.price|float)}}</div>
+        <div class="CoinsInfo-percha percent">{{ "{:,.2f}%".format(coin.quote.USD.percent_change_24h|float)}}</div>
+        <div class="CoinsInfo-marcap dollar">{{ "${:,.2f}".format(coin.quote.USD.market_cap|float)}}</div>
+        <div class="CoinsInfo-volume dollar">{{ "${:,.2f}".format(coin.quote.USD.volume_24h|float)}}</div>
+    </div>
 </div>
 <hr>
 {% if news_articles %}

@@ -92,7 +92,6 @@ ul {
 /* Table CSS */
 .CoinsTable{
     table-layout: fixed;
-
     background: white;
     color: #04202C;
     border-radius: 7px;
@@ -105,6 +104,7 @@ ul {
 
 .CoinsTable-thead {
     display:table-header-group;
+    height:5em;
 }
 
 
@@ -151,10 +151,6 @@ td {
     flex-direction:column;
 }
 
-.CoinsTable-Row-price {
-    width:150em;
-}
-
 .CoinsTable-name-name {
     font-weight: bold;
     font-size: 1rem;
@@ -176,7 +172,106 @@ td {
 
 
 @media only screen and (min-width: 992px) { /* Large devices */
-    
+    #CoinsTable-header2 {
+        width:15em;
+    }
+
+    .CoinsTable-thead {
+        height:3em;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) { /* Extra large devices */
+    .CoinsTable table {
+        width:100%;
+    }
+}
+
+/* Coins info CSS */
+.CoinsInfo{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    height:7em;
+}
+
+.CoinsInfo-header {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: left;
+}
+
+.CoinsInfo-header div {
+    text-align: left;
+    font-weight: bold;
+}
+
+.CoinsInfo-body {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: right;
+}
+
+.CoinsInfo-body div{
+    text-align: right;
+}
+
+@media only screen and (min-width: 600px) { /* Small devices */
+    .CoinsInfo {
+        padding: 0 5em 0 5em;
+    }
+}
+
+@media only screen and (min-width: 768px) { /* Medium devices */
+    .CoinsInfo {
+        flex-direction:column;
+        height:4em;
+        padding: 0;
+    }
+
+    .CoinsInfo-header {
+        flex-direction:row;
+        justify-content:space-between;
+    }
+
+    .CoinsInfo-header div {
+        text-align: center;
+    }
+
+    .CoinsInfo-body {
+        flex-direction:row;
+        justify-content:space-between;
+    }
+
+    .CoinsInfo-body div{
+        text-align: center;
+    }
+
+    .CoinsInfo-price {
+        width:8em;
+    }
+
+    .CoinsInfo-percha {
+        width:12em;
+    }
+
+    .CoinsInfo-marcap {
+        width:10em;
+    }
+
+    .CoinsInfo-volume {
+        width:10em;
+    }
+}
+
+
+@media only screen and (min-width: 992px) { /* Large devices */
+    .CoinsInfo {
+        padding: 0 5em 0 5em;
+    }
 }
 
 
@@ -418,11 +513,11 @@ td {
 
 @media only screen and (min-width: 600px) { /* Small devices */
     .body-section {
-        margin-bottom:14vh;
+        margin-bottom:7vh;
     }
 
     .footer-section {
-        height:14vh;
+        height:7vh;
         font-size:.8em;
     }
 
