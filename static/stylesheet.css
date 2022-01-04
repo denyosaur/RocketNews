@@ -135,7 +135,7 @@ th {
     border-color: #3b9dc4;
 }
 
-.CoinsTable-Row-Header {
+.CoinsTable-row th {
     position:sticky;
     left:0;
     width:10em;
