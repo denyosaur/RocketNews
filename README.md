@@ -44,7 +44,8 @@ The purpose of this project was to implement a full stack web app. The front end
     - Bing News API: https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1?endpoint=apiendpoint_9c82a06e-fbb7-414d-b945-fce253310bba
     - Bloomberg API: https://rapidapi.com/apidojo/api/bloomberg-market-and-financial-news
 
-Tech Stack:
+**Tech Stack**
+---------------
 
     - Front-End
         - Javascript
