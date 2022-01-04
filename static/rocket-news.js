@@ -22,10 +22,10 @@ class NewsListHelpers {
      * then call addArticlesToHtml
     */
     async getCoinArticles() {
+        this.paginationCount += 1; //increase pagination count for external GET request
         const res = await axios.get(`/api/coin-news/${this.symbol}/${this.paginationCount}`);
         this.addArticlesToHtml(res);
         this.ajaxLock = false;
-        this.paginationCount += 1; //increase pagination count for external GET request
     }
 
     /** functions to add new articles to HTML
@@ -35,34 +35,29 @@ class NewsListHelpers {
         let article_info = res.data.articles; //instantiate articles to article_info
         for (let article of article_info) {
             $(".article-section").append(`
-            <div class="card">
-            <div class="card-body">
-                <div class="article-image-title">
-                    <div class="article-image">
+            <div class="Article">
+                <div class="Article-header">
+                    <div class="Article-image">
                         <a href="${article.url}">
-                            <img src="${article.image}" alt="article-image"
+                            <img src="${article.image}" alt="article-image" id="Article-image"
                                 onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkWfbGNKZyGwrxymaoronVG972LJ0Nd3OspQ&usqp=CAU';">
                         </a>
                     </div>
-                    <div class="article-title text-decoration-none">
-                        <a href="${article.url}">
-                            <h4>${article.title}</h4>
-                        </a>
+                    <div class="Article-name">
+                        <div class="Article-title">
+                            <a href="${article.url}">
+                                <h4>${article.title}</h4>
+                            </a>
+                        </div>
+                        <div class="Article-source">
+                            <a href="${article.url}">${article.source}</a>
+                        </div>
                     </div>
                 </div>
-                <div class="article-info">
-                    <div class="article-source text-decoration-none">
-                        <a href="${article.url}">${article.source}</a>
-                    </div>
-                    <div class="article-author">
-                        <span>Created By: ${article.source}</span>
-                    </div>
-                    <div class="article-description">
-                        <span>${article.description}</span>
-                    </div>
+                <div class="Article-description">
+                    <span>${article.description}</span>
                 </div>
             </div>
-        </div>
         `)
         }
     }

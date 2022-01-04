@@ -124,6 +124,11 @@ ul {
 
 td {
     padding:0 20px 0 20px;
+    text-align:center;
+}
+
+th {
+    text-align:center;
 }
 
 .CoinsTable-row:hover {
@@ -140,6 +145,8 @@ td {
     flex-direction: row;
     justify-content: left;
     align-items: center;
+    box-shadow: 3px 0 10px rgb(0 0 0 / 0.1);
+
 }
 
 .CoinsTable-like-button {
@@ -154,10 +161,12 @@ td {
 .CoinsTable-name-name {
     font-weight: bold;
     font-size: 1rem;
+    text-align:left;
 }
 
 .CoinsTable-name-symbol {
     font-size: .7rem;
+    text-align:left;
 }
 
 @media only screen and (min-width: 600px) { /* Small devices */
@@ -280,7 +289,22 @@ td {
 }
 
 /* news article CSS */
-.article-image img {
+.Article {
+    display:flex;
+    flex-direction:column;
+    align-items:left;
+    color:#304044;
+    background-color:white;
+    border-radius: .3em;
+    margin-bottom:1em;
+}
+
+.Article-header {
+    display:flex;
+    flex-direction:row;
+}
+
+#Article-image{
     max-width:100px;
     max-height:100px;
     width:auto;
@@ -290,12 +314,10 @@ td {
     margin-right:.3rem;
 }
 
-.article-info {
-    margin-top:2%;
-}
+.Article-name {
+    display:flex;
+    flex-direction:column; 
 
-.card-body {
-    color:#304044;
 }
 
 /* Homepage CSS */
