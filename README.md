@@ -38,7 +38,7 @@ The purpose of this project was to implement a full stack web app. The front end
 ---------------
 - Coin APIs:
     - coin API: https://coinmarketcap.com/api/documentation/v1/
-    - coin and stock API: https://polygon.io/docs/getting-started 
+    - coin API: https://polygon.io/docs/getting-started 
 - News APIs
     - Google News API: https://newsapi.org/docs
     - Bing News API: https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1?endpoint=apiendpoint_9c82a06e-fbb7-414d-b945-fce253310bba
