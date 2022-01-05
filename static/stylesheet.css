@@ -108,7 +108,7 @@ ul {
 }
 
 .CoinsTable-tbody {
-    border-radius: 7px;
+    width:100%;
 }
 
 #CoinsTable-header2 {
@@ -117,13 +117,13 @@ ul {
     left:0;
     background-color:white;
     z-index: 2;
+    box-shadow: 3px 0 10px rgb(0 0 0 / 0.1);
 }
 
 .CoinsTable-row {
     border-style:solid;
     border-color: #acc1c9;
     border-width:1px;
-    margin-left:10em;
 }
 
 td {
@@ -139,8 +139,8 @@ th {
     border-color: #3b9dc4;
 }
 
-.CoinsTable-row th {
-    position:absolute;
+.CoinsTable-Row-Header {
+    position:sticky;
     left:0;
     width:10em;
     background-color:white;
@@ -150,6 +150,7 @@ th {
     justify-content: left;
     align-items: center;
     box-shadow: 3px 0 10px rgb(0 0 0 / 0.1);
+    margin:0;
 }
 
 .CoinsTable-like-button {
@@ -159,6 +160,7 @@ th {
 .CoinsTable-Row-Header a{
     display:flex;
     flex-direction:column;
+
 }
 
 .CoinsTable-name-name {
@@ -184,6 +186,10 @@ th {
 
 
 @media only screen and (min-width: 992px) { /* Large devices */
+    .CoinsTable table {
+        width:100%;
+    }
+
     #CoinsTable-header2 {
         width:15em;
     }
@@ -192,16 +198,14 @@ th {
         height:3em;
     }
 
-    .CoinsTable-row th {
+    .CoinsTable-Row-Header {
         width:100%;
     }
 }
 
 
 @media only screen and (min-width: 1200px) { /* Extra large devices */
-    .CoinsTable table {
-        width:100%;
-    }
+
 }
 
 /* Coins info CSS */
@@ -418,7 +422,7 @@ th {
 
 .loginform-container form{
     width:70vw;
-    max-width:700px;
+    max-width:400px;
 }
 
 @media only screen and (min-width: 600px) { /* Small devices */
@@ -461,7 +465,7 @@ th {
 
 .Registerform-container form{
     width:70vw;
-    max-width:700px;
+    max-width:400px;
 }
 
 .form-button {
