@@ -107,6 +107,9 @@ ul {
     height:5em;
 }
 
+.CoinsTable-tbody {
+    border-radius: 7px;
+}
 
 #CoinsTable-header2 {
     position:sticky;
@@ -120,6 +123,7 @@ ul {
     border-style:solid;
     border-color: #acc1c9;
     border-width:1px;
+    margin-left:10em;
 }
 
 td {
@@ -136,7 +140,7 @@ th {
 }
 
 .CoinsTable-row th {
-    position:sticky;
+    position:absolute;
     left:0;
     width:10em;
     background-color:white;
@@ -146,7 +150,6 @@ th {
     justify-content: left;
     align-items: center;
     box-shadow: 3px 0 10px rgb(0 0 0 / 0.1);
-
 }
 
 .CoinsTable-like-button {
@@ -187,6 +190,10 @@ th {
 
     .CoinsTable-thead {
         height:3em;
+    }
+
+    .CoinsTable-row th {
+        width:100%;
     }
 }
 
