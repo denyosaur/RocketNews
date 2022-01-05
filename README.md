@@ -1,12 +1,13 @@
 **Rocket News** 
 =====================================
 
-Rocket News is used to track crypto currency prices and performances. A user can view specific coins to get a high level overview of performance and the most up to date news articles.
+Rocket News is a full-stack pet project used to track cryptocurrency. Users can view details of a specific coin for a high level overview of performance and the most up to date news articles. 
 https://rocketnews.herokuapp.com/
 
 **Features**
 ---------------
-The purpose of this project was to implement a full stack web app. The front end was designed with mobile first in mind, then larger screen sizes. This web app is a practice in utilizing various external web APIs as well as the creation and utilization of internal APIs. 
+The purpose of this project was a practice in the implementation a full-stack web application that utilized both external and internal APIs. 
+The front-end was designed with mobile first in mind, to create the most user friendly experience on mobile devices. Larger screen sizes were then developed in addition to the mobile first design. The back-end was created using RESTful routing conventions. Both internal and external API routing is handled by the back end. 
 
 **Features**
 ---------------
