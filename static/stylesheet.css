@@ -607,3 +607,88 @@ th {
 @media only screen and (min-width: 1200px) { /* Extra large devices */
 
 }
+
+/* Error Page */
+.ErrorPage {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width:100%;
+    margin-top:11em;
+}
+
+.ErrorPage-header h3{
+    font-size: 2em;
+}
+
+.ErrorPage-body {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size:1em;
+    width:80%;
+}
+
+.ErrorPage-body span{
+    text-align: center;
+}
+
+.ErrorPage-image {
+    margin-top:3em;
+}
+
+.ErrorPage-image img{
+    height:100px;
+    width:auto;
+}
+
+@media only screen and (min-width: 600px) { /* Small devices */
+    .ErrorPage-header h3{
+        font-size: 3em;
+    }
+
+    .ErrorPage-body {
+        font-size:1.2em;
+    }
+}
+
+@media only screen and (min-width: 768px) { /* Medium devices */
+    .ErrorPage-header h3{
+        font-size: 4em;
+    }
+    
+    .ErrorPage-body {
+        font-size:1.5em;
+        width:80%;
+    }
+
+    .ErrorPage-image img{
+        height:130px;
+        width:auto;
+    }
+}
+
+
+@media only screen and (min-width: 992px) { /* Large devices */
+    
+}
+
+
+@media only screen and (min-width: 1200px) { /* Extra large devices */
+    .ErrorPage-header h3{
+        font-size: 6em;
+    }
+
+    .ErrorPage-body {
+        font-size:2em;
+        width:60%;
+    }
+
+    .ErrorPage-image img{
+        height:160px;
+        width:auto;
+    }
+}
