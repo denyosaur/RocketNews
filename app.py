@@ -282,3 +282,15 @@ def coin_info(coin_symbol):
         return render_template('coin-info.html', coin=coin_info, coin_history=coin_history, news_articles=news_articles, followed=followed_ids_list)
 
     return render_template('coin-info.html', coin=coin_info, coin_history=jsonify(coin_history), news_articles=news_articles)
+
+#########################################################################################################
+###   Error Handling   ##################################################################################
+#########################################################################################################
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('ErrorPage/page_not_found.html'), 404
+
+@app.errorhandler(500)
+def page_not_found(error):
+    return render_template('ErrorPage/page_not_found.html'), 500
