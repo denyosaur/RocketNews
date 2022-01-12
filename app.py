@@ -142,8 +142,7 @@ def view_user_info(user_id):
     form = UserProfile(obj=g.user)
 
     if form.validate_on_submit():
-        password=form.password.data
-        authenticate = user.authenticate(g.user.username, password)
+        authenticate = user.authenticate(g.user.username, form.password.data)
         if authenticate:
             g.user.username = form.username.data
             g.user.email = form.email.data
