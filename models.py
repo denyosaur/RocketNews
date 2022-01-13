@@ -16,7 +16,6 @@ class User(db.Model):
     currency = db.Column(db.Text, nullable=True, default='USD')
 
     coins = db.relationship('CoinsList', secondary='coin_followed', backref='users')
-    # stocks = db.relationship('StocksList', secondary='stock_followed', backref='user')
 
     def __repr__(self):
         return f'user_info #{self.id}: {self.username}, {self.email}'
@@ -55,32 +54,6 @@ class CoinFollowed(db.Model):
         new_coin = CoinFollowed(user_id=user_id, coin_cmc_id=coin_id)
         db.session.add(new_coin)
         return new_coin
-
-# class StockFollowed(db.Model):
-#     '''table of stocks that users followed'''
-#     __tablename__='stock_followed'
-#     user_id = db.Column(db.Integer, 
-#                         db.ForeignKey('user_info.id'), 
-#                         primary_key=True)
-#     stock_id = db.Column(db.Text, 
-#                         db.ForeignKey('stock_list.stock_symbol'), 
-#                         primary_key=True)
-#     favorited = db.Column(db.Boolean)
-
-#     @classmethod
-#     def follow_stock(cls, user_id, stock_id):
-#         new_stock = StockFollowed(user_id=user_id, stock_id=stock_id)
-#         db.session.add(new_stock)
-#         return new_stock
-
-# class StocksList(db.Model):
-#     '''list of all the stocks'''
-#     __tablename__='stock_list'
-#     stock_symbol = db.Column(db.Text, unique=True, nullable = False, primary_key=True)
-#     company_name = db.Column(db.Text, nullable = False)
-#     company_industry = db.Column(db.Text)
-#     sector = db.Column(db.Text)
-#     country = db.Column(db.Text)
 
 class CoinsList(db.Model):
     '''list of all the crypto currencys'''
