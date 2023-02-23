@@ -10,8 +10,13 @@ import os
 from flask_debugtoolbar import DebugToolbarExtension
 #########################################################################################################
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news')).replace("://", "ql://", 1)
-##app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news'))
+
+## HEROKU env
+#app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news')).replace("://", "ql://", 1)
+## dev env
+#app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news'))
+## RENDER ENV
+app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgres://portfolio_be_user:12IeIbLpbcZijNRsT8UyjrNA9u9XAAGY@dpg-cfmp86arrk0eqlrme8sg-a/rocketnews'))
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
