@@ -2,7 +2,8 @@
 =====================================
 
 Rocket News is a full-stack pet project used to track cryptocurrency. Users can view details of a specific coin for a high level overview of performance and the most up to date news articles. 
-https://rocketnews.herokuapp.com/
+
+https://rocketnews.onrender.com/
 
 **Features**
 ---------------
