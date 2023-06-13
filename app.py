@@ -14,10 +14,10 @@ app = Flask(__name__)
 ## HEROKU env
 #app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news')).replace("://", "ql://", 1)
 ## dev env
-app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news'))
+## app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news'))
 ## RENDER ENV
-# app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL'))
-# app.config['SQLALCHEMY_DATABASE_URI'] = (os.getenv('DATABASE_URL').replace("postgres://", "postgresql://", 1))
+## app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL'))
+app.config['SQLALCHEMY_DATABASE_URI'] = (os.getenv('DATABASE_URL').replace("postgres://", "postgresql://", 1))
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
