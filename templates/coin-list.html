@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}ymbol
 {% block body %}
 <meta id="identifier" data-identifier="coins">
     <div class="CoinsTable">
@@ -16,7 +16,7 @@
                 {% for coin in coins %}
                 <tr class="CoinsTable-row">
                     <th headers="CoinsTable-header2" class="CoinsTable-Row-Header" scope="row">
-                        <div class="CoinsTable-like-button">
+                        <div class="CoinsTable-like-button" data-symbol="{{coin.symbol}}">
                             {% if coin.id in followed %}
                             <i class="like-button bi bi-moon-stars-fill"></i>
                             {% else %}

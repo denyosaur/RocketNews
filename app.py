@@ -14,10 +14,10 @@ app = Flask(__name__)
 ## HEROKU env
 #app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news')).replace("://", "ql://", 1)
 ## dev env
-#app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news'))
+app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///rocket_news'))
 ## RENDER ENV
 # app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL'))
-app.config['SQLALCHEMY_DATABASE_URI'] = (os.getenv('DATABASE_URL').replace("postgres://", "postgresql://", 1))
+# app.config['SQLALCHEMY_DATABASE_URI'] = (os.getenv('DATABASE_URL').replace("postgres://", "postgresql://", 1))
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
@@ -203,6 +203,7 @@ def add_followed_coin(symbol):
     else:
         new_coin_followed = CoinFollowed.follow_coin(g.user.id, coin.id)
         db.session.commit()
+        print(new_coin_followed)
         return (jsonify(info={
             'Message':'Successfully Added'
             }), 204)
@@ -225,6 +226,7 @@ def search_coin_db_similar(input):
     route is used for search bar to find coins according to the users text inputs'''
     queried = coinlist.query.filter_by(coin_symbol=input).limit(10).all()
     query_obj = coins.coin_query_serialize(queried)
+    print(query_obj)
     return jsonify(results=query_obj)
 
 @app.route('/api/update-coin-list', methods=['GET', 'POST'])

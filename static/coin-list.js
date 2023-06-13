@@ -44,7 +44,7 @@ class CoinListHelpers {
 
                 $(".CoinsTable-tbody").append(`
                 <tr class="CoinsTable-row">
-                    <th headers="CoinsTable-header2" class="CoinsTable-Row-Header" scope="row">
+                    <th headers="CoinsTable-header2" class="CoinsTable-Row-Header" data-symbol=${newCoin.symbol} scope="row">
                         <div class="CoinsTable-like-button" data-symbol=${newCoin.symbol}>
                             ${button}
                         </div>
@@ -109,7 +109,7 @@ let CoinsHelpers = new CoinListHelpers();
 */
 $(document).on("click", ".like-button", (evt) => {
     $(evt.target).toggleClass("bi-moon-stars-fill bi-moon");
-    
+
     let coinSymbol = $(evt.target).parent().data("symbol");
     CoinsHelpers.addCoinToFavorite(coinSymbol);
 });
